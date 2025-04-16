@@ -1,0 +1,11 @@
+############### RUNNING OPENWEBRX WITH MSI SDR PANADAPTER #########
+
+#First run soapy sdr server
+SoapySDRServer --bind=127.0.0.1:55132
+
+#Then start openwebrx
+openwebrx
+
+#Then open Web UI in web browser
+x-www-browser "http://localhost:8073"
+
