@@ -1,18 +1,18 @@
 #!/bin/sh
 thisuser="$(whoami)"
 TARGET="x86_64-linux-gnu"
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade -y
 
 ############INSTALL LIBMIRISDR##################
 
-sudo apt-get install build-essential git cmake libusb-1.0-0-dev libusb-1.0-0
+sudo apt-get install -y build-essential git cmake libusb-1.0-0-dev libusb-1.0-0
 sudo ln -s /usr/lib/${TARGET}/libusb-1.0.so.0 /usr/lib/${TARGET}/libusb-1.0.so
 git clone https://github.com/ericek111/libmirisdr-5
 cd libmirisdr-5
 
-sudo apt-get autoremove libmirisdr0
-sudo apt-get autoremove libmirisdr4
-sudo apt-get autoremove libmirisdr-dev
+sudo apt-get autoremove -y libmirisdr0
+sudo apt-get autoremove -y libmirisdr4
+sudo apt-get autoremove -y libmirisdr-dev
 
 mkdir build
 cd build
@@ -27,7 +27,7 @@ sudo ln -s /usr/lib/libmirisdr.so /usr/lib/libmirisdr.so.0
 
 cd ../../
 
-sudo apt-get install equivs
+sudo apt-get install -y equivs
 
 echo "Package: libmirisdr-dummy" > libmirisdr-dummy.equivs
 echo "Version: 1" >> libmirisdr-dummy.equivs
