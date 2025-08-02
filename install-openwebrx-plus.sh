@@ -3,7 +3,7 @@
 git clone https://github.com/luarvique/openwebrx.git
 cd openwebrx
 
-sudo apt-get install libsamplerate0-dev dh-python python3-all python3-setuptools \
+sudo apt-get install -y libsamplerate0-dev dh-python python3-all python3-setuptools \
 librtlsdr-dev libprotobuf-dev protobuf-compiler libudev-dev \
 meson libsndfile1-dev libliquid-dev nlohmann-json3-dev intltool python3-distutils-extra
 
