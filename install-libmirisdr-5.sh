@@ -1,4 +1,8 @@
 #!/bin/sh
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 thisuser="$(whoami)"
 TARGET="x86_64-linux-gnu"
 sudo apt-get update && sudo apt-get upgrade -y
@@ -58,3 +62,5 @@ else
 fi
 
 echo "MSI.SDR installed, please reboot your system."
+
+umask "${OLD_UMASK}"
