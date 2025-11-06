@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 #############INSTALL SOAPYMIRI DRIVER############
 
 sudo apt-get install -y libsoapysdr-dev
@@ -36,3 +39,6 @@ sudo apt-get install -y gr-osmosdr libosmosdr0 libsoapysdr0.8 soapysdr0.8-module
 sudo apt-get install -y liblimesuite23.11-1 limesuite-udev soapyosmo-common0.8 soapysdr0.8-module-lms7 soapysdr0.8-module-osmosdr soapysdr0.8-module-rfspace
 
 sudo apt-get install soapyremote-server
+
+umask "${OLD_UMASK}"
+
