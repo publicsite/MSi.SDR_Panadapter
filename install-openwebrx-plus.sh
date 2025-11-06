@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 git clone https://github.com/luarvique/openwebrx.git
 cd openwebrx
 
@@ -28,3 +31,5 @@ sudo sed -i "s#/var/lib/openwebrx#$HOME/openwebrx#g" /etc/openwebrx/openwebrx.co
 openwebrx admin adduser administrator
 
 cp -a settings.json $HOME/openwebrx/
+
+umask "${OLD_UMASK}"
